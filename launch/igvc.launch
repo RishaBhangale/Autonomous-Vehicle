@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="igvc" type="control.py" name="controller" output="screen"/>
+    <!-- <node pkg="igvc" type="OBJ.py" name="igvc_controller" />
+    <node pkg="igvc" type="IMU.py" name="imu_controller" />
+    <node pkg="igvc" type="GPS.py" name="gps_controller"/>
+    <node pkg="igvc" type="NAV_GPS.py" name="nav_gps" output="screen"/>  -->
+    <!-- <node pkg="igvc" type="heartbeat.py" name="heart_break" output= "screen"/> -->
+</launch> 

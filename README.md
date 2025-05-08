@@ -1,4 +1,4 @@
-# Autonomous Vehicle Project
+# Autonomous Vehicle Project 
 
 This repository contains the complete source code for an autonomous vehicle project that relies solely on computer vision for navigation and obstacle detection. The system integrates data from GPS, IMU, and camera modules using ROS Noetic, enabling robust and real-time communication between sensor inputs and the vehicle's microcontroller.
 

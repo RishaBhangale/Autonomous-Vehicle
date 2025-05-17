@@ -1,8 +1,45 @@
 <launch>
-    <node pkg="igvc" type="control.py" name="controller" output="screen"/>
-    <!-- <node pkg="igvc" type="OBJ.py" name="igvc_controller" />
-    <node pkg="igvc" type="IMU.py" name="imu_controller" />
-    <node pkg="igvc" type="GPS.py" name="gps_controller"/>
-    <node pkg="igvc" type="NAV_GPS.py" name="nav_gps" output="screen"/>  -->
+    <node pkg="igvc_node" type="OBJ_new.py" name="igvc_controller" />
+    <node pkg="igvc_node" type="GPS.py" name="gps_controller"/>
+    <node pkg="igvc_node" type="NAV_GPS.py" name="nav_gps" output="screen"/> 
+    <!-- <node pkg="igvc_node" type="OBJ.py" name="igvc_controller" /> -->
+    <!-- <node pkg="igvc" type="IMU.py" name="imu_controller" /> -->
     <!-- <node pkg="igvc" type="heartbeat.py" name="heart_break" output= "screen"/> -->
+
+     <arg name="svo_file"             default="" /> 
+    <arg name="stream"               default="" /> 
+
+    <arg name="node_name"            default="zed_node" />
+    <arg name="camera_model"         default="zed2i" />
+    <arg name="publish_urdf"         default="true" />
+
+    <arg name="camera_name"          default="zed2i" />
+
+    <arg name="base_frame"           default="base_link" />
+
+    <arg name="cam_pos_x"             default="0.0" /> 
+    <arg name="cam_pos_y"             default="0.0" /> 
+    <arg name="cam_pos_z"             default="0.0" /> 
+    <arg name="cam_roll"              default="0.0" /> 
+    <arg name="cam_pitch"             default="0.0" /> 
+    <arg name="cam_yaw"               default="0.0" /> 
+
+    <group ns="$(arg camera_name)">
+        <include file="$(find zed_wrapper)/launch/include/zed_camera.launch.xml">
+            <arg name="camera_name"         value="$(arg camera_name)" />
+            <arg name="svo_file"            value="$(arg svo_file)" />
+            <arg name="stream"              value="$(arg stream)" />
+            <arg name="node_name"           value="$(arg node_name)" />
+            <arg name="camera_model"        value="$(arg camera_model)" />
+            <arg name="base_frame"          value="$(arg base_frame)" />
+            <arg name="publish_urdf"        value="$(arg publish_urdf)" />
+            <arg name="cam_pos_x"           value="$(arg cam_pos_x)" />
+            <arg name="cam_pos_y"           value="$(arg cam_pos_y)" />
+            <arg name="cam_pos_z"           value="$(arg cam_pos_z)" />
+            <arg name="cam_roll"            value="$(arg cam_roll)" />
+            <arg name="cam_pitch"           value="$(arg cam_pitch)" />
+            <arg name="cam_yaw"             value="$(arg cam_yaw)" />
+        </include>
+    </group>
+
 </launch> 

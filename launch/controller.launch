@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="igvc_node" type="control.py" name="controller" output="screen"/>
+</launch>
